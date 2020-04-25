@@ -2,7 +2,7 @@ import time
 import speech_recognition as sr
 from googletrans import Translator
 from monkeylearn import MonkeyLearn
-monkeylearn_key = MonkeyLearn('<my_key')
+monkeylearn_key = MonkeyLearn('<my_key>')
 
 
 def recognize_speech_from_mic(recognizer, microphone):
@@ -112,7 +112,7 @@ while dog_awake == True:
             dog_mood = dog_mood + 0.5
 
 
-print ('Good night')
+
 print('\n' * 100)
 print('ישן')
 print('')
