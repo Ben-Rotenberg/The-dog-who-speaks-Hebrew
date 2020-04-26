@@ -2,13 +2,12 @@ import time
 import speech_recognition as sr
 from googletrans import Translator
 from monkeylearn import MonkeyLearn
-monkeylearn_key = MonkeyLearn('<my_key>')
+monkeylearn_key = MonkeyLearn('500b6a2c68c8fef2679991a11402e281bcfaef2f')
 
 
 def recognize_speech_from_mic(recognizer, microphone):
     with microphone as source:
-        recognizer.adjust_for_ambient_noise(source, duration = 0.5)
-        audio = recognizer.record(source,  duration = 4)
+        audio = recognizer.record(source,  duration = 3)
     try:
         transcription = recognizer.recognize_google(audio, language= 'he-IL')
     except:
@@ -94,9 +93,10 @@ while dog_awake == True:
 
     if "sleep" in translation:
         dog_awake = False
+        break
 
     sentiment = (sentiment_analysis(translation, monkeylearn_key))
-    print('sentiment:' ,sentiment)
+
     if sentiment == 'Positive':
         print_happy()
         dog_mood = dog_mood + 1
@@ -104,7 +104,7 @@ while dog_awake == True:
         print_sad()
         dog_mood = dog_mood - 1
     else:
-        if dog_mood > 0:
+        if dog_mood >= 0:
             print_happy()
             dog_mood = dog_mood - 0.5
         elif dog_mood < 0:
@@ -112,7 +112,7 @@ while dog_awake == True:
             dog_mood = dog_mood + 0.5
 
 
-
+print ('Good night')
 print('\n' * 100)
 print('ישן')
 print('')
