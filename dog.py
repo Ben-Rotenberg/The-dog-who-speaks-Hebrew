@@ -4,7 +4,6 @@ from googletrans import Translator
 from monkeylearn import MonkeyLearn
 monkeylearn_key = MonkeyLearn('500b6a2c68c8fef2679991a11402e281bcfaef2f')
 
-
 def recognize_speech_from_mic(recognizer, microphone):
     with microphone as source:
         audio = recognizer.record(source,  duration = 3)
@@ -36,7 +35,6 @@ def print_happy():
     print ('╲┃┈┈┈┈╰━┳━━━━╯')
     time.sleep(3)
 
-
 def print_sad():
     print('\n'*100)
     print('עצוב')
@@ -51,7 +49,6 @@ def print_sad():
     print('╲┃┈┈┈┈╭━┳━━━━╯')
     time.sleep(3)
 
-
 def print_listening():
     print('\n'*100)
     print('מקשיב')
@@ -64,7 +61,6 @@ def print_listening():
     print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
     print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
     print('╲┃┈┈┈┈━━┳━━━━╯')
-
 
 def print_thinking():
     print('\n'*100)
@@ -79,7 +75,18 @@ def print_thinking():
     print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
     print('╲┃┈┈┈┈━━┳━━━━╯')
 
-
+def print_sleeping():
+    print('\n'*100)
+    print('ישן')
+    print('')
+    print('')
+    print('╭━┳━╭━╭━╮╮  z   z   z')
+    print('┃┈┈┈┣━╋━┫┃    z   z   z')
+    print('┃┈┃┈╰━╰━━━━━━╮')
+    print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
+    print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
+    print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
+    print('╲┃┈┈┈┈━━┳━━━━╯')
 
 dog_mood = 0
 dog_awake = True
@@ -89,7 +96,6 @@ while dog_awake == True:
     print_thinking()
 
     translation = translator(speech_to_text, Translator()).text
-
 
     if "sleep" in translation:
         dog_awake = False
@@ -111,16 +117,4 @@ while dog_awake == True:
             print_sad()
             dog_mood = dog_mood + 0.5
 
-
-print ('Good night')
-print('\n' * 100)
-print('ישן')
-print('')
-print('')
-print('╭━┳━╭━╭━╮╮  z   z   z')
-print('┃┈┈┈┣━╋━┫┃    z   z   z')
-print('┃┈┃┈╰━╰━━━━━━╮')
-print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
-print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
-print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
-print('╲┃┈┈┈┈━━┳━━━━╯')
+print_sleeping()
