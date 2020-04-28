@@ -79,7 +79,7 @@ def print_dog(mood):
         print('')
         print('')
         print('╭━┳━╭━╭━╮╮')
-        print('┃┈┈┈┣━╋━┫┃')
+        print('┃┈┈┈┣▉╋━┫┃')
         print('┃┈┃┈╰━╰━━━━━━╮')
         print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
         print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
