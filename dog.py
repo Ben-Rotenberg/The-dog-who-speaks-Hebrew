@@ -21,79 +21,88 @@ def sentiment_analysis(speech_to_text,ml_k):
     analysis = ml_k.classifiers.classify(model_id='cl_Jx8qzYJh', data=[speech_to_text])
     return analysis.body[0]['classifications'][0]['tag_name']
 
-def print_happy():
-    print('\n'*100)
-    print ('שמח!')
-    print ('')
-    print('')
-    print ('╭━┳━╭━╭━╮╮')
-    print ('┃┈┈┈┣▉╋▉┫┃')
-    print ('┃┈┃┈╰━╰━━━━━━╮')
-    print ('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
-    print ('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
-    print ('╲┃┈┈┈┈┃┈┈┈┈◥▉◤')
-    print ('╲┃┈┈┈┈╰━┳━━━━╯')
-    time.sleep(3)
+def print_dog(mood):
+    print('\n' * 100)
+    if mood == 'happy':
+        print('שמח!')
+        print('')
+        print('')
+        print('╭━┳━╭━╭━╮╮')
+        print('┃┈┈┈┣▉╋▉┫┃')
+        print('┃┈┃┈╰━╰━━━━━━╮')
+        print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
+        print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
+        print('╲┃┈┈┈┈┃┈┈┈┈◥▉◤')
+        print('╲┃┈┈┈┈╰━┳━━━━╯')
+        time.sleep(3)
 
-def print_sad():
-    print('\n'*100)
-    print('עצוב')
-    print('')
-    print('')
-    print('╭━┳━╭━╭━╮╮')
-    print('┃┈┈┈┣▅╋▅┫┃')
-    print('┃┈┃┈╰━╰━━━━━━╮')
-    print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
-    print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
-    print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
-    print('╲┃┈┈┈┈╭━┳━━━━╯')
-    time.sleep(3)
+    elif mood == 'sad':
+        print('עצוב')
+        print('')
+        print('')
+        print('╭━┳━╭━╭━╮╮')
+        print('┃┈┈┈┣▅╋▅┫┃')
+        print('┃┈┃┈╰━╰━━━━━━╮')
+        print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
+        print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
+        print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
+        print('╲┃┈┈┈┈╭━┳━━━━╯')
+        time.sleep(3)
 
-def print_listening():
-    print('\n'*100)
-    print('מקשיב')
-    print('╭━┳    ╭━┳  ')
-    print('┃┈┃    ┃┈┃  ')
-    print('┃┈┳━╭━╭━╮╮')
-    print('╰━╯┈┣▉╋▉┫┃')
-    print('┃┈┃┈╰━╰━━━━━━╮')
-    print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
-    print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
-    print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
-    print('╲┃┈┈┈┈━━┳━━━━╯')
+    elif mood == 'neutral':
+        print('ניטרלי')
+        print('')
+        print('')
+        print('╭━┳━╭━╭━╮╮')
+        print('┃┈┈┈┣▉╋▉┫┃')
+        print('┃┈┃┈╰━╰━━━━━━╮')
+        print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
+        print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
+        print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
+        print('╲┃┈┈┈┈┈━┳━━━━╯')
+        time.sleep(3)
 
-def print_thinking():
-    print('\n'*100)
-    print('חושב')
-    print('')
-    print('')
-    print('╭━┳━╭━╭━╮╮')
-    print('┃┈┈┈┣━╋━┫┃')
-    print('┃┈┃┈╰━╰━━━━━━╮')
-    print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
-    print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
-    print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
-    print('╲┃┈┈┈┈━━┳━━━━╯')
+    elif mood == 'listening':
+        print('מקשיב')
+        print('╭━┳    ╭━┳  ')
+        print('┃┈┃    ┃┈┃  ')
+        print('┃┈┳━╭━╭━╮╮')
+        print('╰━╯┈┣▉╋▉┫┃')
+        print('┃┈┃┈╰━╰━━━━━━╮')
+        print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
+        print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
+        print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
+        print('╲┃┈┈┈┈━━┳━━━━╯')
 
-def print_sleeping():
-    print('\n'*100)
-    print('ישן')
-    print('')
-    print('')
-    print('╭━┳━╭━╭━╮╮  z   z   z')
-    print('┃┈┈┈┣━╋━┫┃    z   z   z')
-    print('┃┈┃┈╰━╰━━━━━━╮')
-    print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
-    print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
-    print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
-    print('╲┃┈┈┈┈━━┳━━━━╯')
+    elif mood == 'thinking':
+        print('חושב')
+        print('')
+        print('')
+        print('╭━┳━╭━╭━╮╮')
+        print('┃┈┈┈┣━╋━┫┃')
+        print('┃┈┃┈╰━╰━━━━━━╮')
+        print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
+        print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
+        print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
+        print('╲┃┈┈┈┈━━┳━━━━╯')
 
-dog_mood = 0
+    elif mood == 'sleeping':
+        print('ישן')
+        print('')
+        print('')
+        print('╭━┳━╭━╭━╮╮  z   z   z')
+        print('┃┈┈┈┣━╋━┫┃    z   z   z')
+        print('┃┈┃┈╰━╰━━━━━━╮')
+        print('╰┳╯┈┈┈┈┈┈┈┈◢▉◣')
+        print('╲┃┈┈┈┈┈┈┈┈┈▉▉▉')
+        print('╲┃┈┈┈┈┈┈┈┈┈◥▉◤')
+        print('╲┃┈┈┈┈━━┳━━━━╯')
+
 dog_awake = True
 while dog_awake == True:
-    print_listening()
+    print_dog('listening')
     speech_to_text = recognize_speech_from_mic(sr.Recognizer(), sr.Microphone())
-    print_thinking()
+    print_dog('thinking')
 
     translation = translator(speech_to_text, Translator()).text
 
@@ -104,17 +113,10 @@ while dog_awake == True:
     sentiment = (sentiment_analysis(translation, monkeylearn_key))
 
     if sentiment == 'Positive':
-        print_happy()
-        dog_mood = dog_mood + 1
+        print_dog('happy')
     elif sentiment == 'Negative':
-        print_sad()
-        dog_mood = dog_mood - 1
+        print_dog('sad')
     else:
-        if dog_mood >= 0:
-            print_happy()
-            dog_mood = dog_mood - 0.5
-        elif dog_mood < 0:
-            print_sad()
-            dog_mood = dog_mood + 0.5
+        print_dog('neutral')
 
-print_sleeping()
+print_dog('sleeping')
